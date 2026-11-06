@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#35172f">
+  <title>DG GIFT — Creador de regalos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="brand-heart">♥</span><div><b>DG GIFT</b><small>Un regalo hecho con el corazón</small></div></div>
+    <span class="top-tag">CREÁ UN RECUERDO ÚNICO</span>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow">UN DETALLE QUE SE SIENTE</p>
+      <h1>Convertí tus recuerdos<br><em>en un regalo inolvidable.</em></h1>
+      <p>Completá cada parte, mirá la vista previa y descargá tu regalo listo para compartir.</p>
+    </section>
+
+    <div class="layout">
+      <section class="builder">
+        <div class="section-head"><span class="step">01</span><div><h2>La dedicatoria</h2><p>Empezá por lo más importante.</p></div></div>
+        <label>¿Para quién es?<input id="recipient" placeholder="Ej. Para mi persona favorita"></label>
+        <label>Título del regalo<input id="title" placeholder="Ej. Nuestra historia"></label>
+        <label>Tu carta<textarea id="letter" rows="5" placeholder="Escribí acá todo eso que querés decir..."></textarea></label>
+        <label>Tu firma<input id="signature" placeholder="Con todo mi amor..."></label>
+
+        <div class="section-head"><span class="step">02</span><div><h2>Las fotos</h2><p>Elegí hasta 20 fotos desde tu celular.</p></div></div>
+        <label class="filebox"><span class="file-icon">＋</span><span><b>Agregar fotos</b><small>JPG, PNG o WEBP · máximo 20</small></span><input id="photos" type="file" accept="image/*" multiple></label>
+        <div id="photoStatus" class="hint">Todavía no agregaste fotos.</div>
+        <div id="photoThumbs" class="thumbs"></div>
+
+        <div class="section-head"><span class="step">03</span><div><h2>La música</h2><p>Pegá un enlace de YouTube.</p></div></div>
+        <label>Enlace de YouTube<input id="youtube" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>
+        <p class="hint">La persona podrá tocar reproducir. YouTube puede impedir la reproducción automática.</p>
+
+        <div class="section-head"><span class="step">04</span><div><h2>El video final</h2><p>Un último recuerdo para cerrar el regalo.</p></div></div>
+        <label class="filebox"><span class="file-icon">▶</span><span><b>Elegir video de tu galería</b><small>MP4 recomendado · ideal hasta 25 MB</small></span><input id="video" type="file" accept="video/mp4,video/*"></label>
+        <div id="videoStatus" class="hint">Todavía no agregaste un video.</div>
+
+        <div class="section-head"><span class="step">05</span><div><h2>Crear y compartir</h2><p>Descargá el regalo y después generá su QR.</p></div></div>
+        <button id="createGift" class="primary">♥ Crear y descargar mi regalo</button>
+        <p id="createStatus" class="hint" aria-live="polite">Se descargará un archivo HTML que contiene tus fotos y tu video.</p>
+        <div class="qr-panel">
+          <h3>Tu código QR</h3>
+          <p>Primero publicá el regalo y pegá acá el enlace público que te dé Cloudflare.</p>
+          <label>Enlace público del regalo<input id="publicUrl" type="url" placeholder="https://..."></label>
+          <button id="makeQr" class="secondary">Generar QR</button>
+          <div id="qr" class="qr-output"></div>
+          <button id="downloadQr" class="secondary" disabled>Descargar QR</button>
+        </div>
+      </section>
+
+      <aside class="preview">
+        <div class="preview-top"><span>VISTA PREVIA</span><span class="live"><i></i> EN VIVO</span></div>
+        <div class="preview-card">
+          <div class="preview-heart">♥</div>
+          <p class="preview-overline">UN REGALO ESPECIAL PARA</p>
+          <h2 id="prevTitle">Nuestra historia</h2>
+          <p id="prevRecipient">Alguien muy especial</p>
+          <div id="prevPhotos" class="preview-photos"><span>♥</span><span>♥</span><span>♥</span></div>
+          <div class="preview-letter"><span>CON CARIÑO</span><p id="prevLetter">Acá aparecerán tus palabras...</p><b id="prevSignature">Con amor ♥</b></div>
+          <div class="preview-end">Y todavía queda un recuerdo más... ♥</div>
+        </div>
+        <div class="preview-note">La vista previa es una muestra. El regalo descargado tendrá la animación del corazón y todo el contenido que agregues.</div>
+      </aside>
+    </div>
+  </main>
+  <footer>DG GIFT · Hecho para regalar momentos</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
